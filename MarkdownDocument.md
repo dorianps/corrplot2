@@ -71,9 +71,7 @@ corrplot(temp[[1]],
          title="Correlation matrix using corrplot")
 ```
 
-```
-## Error in eval(expr, envir, enclos): could not find function "corrplot"
-```
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 The plot shows clearly which cells contain the highest correlations. But there is no information on confidence intervals.  
   
@@ -89,9 +87,7 @@ corrplot(temp[[1]],
          title="Correlation CI using corrplot")
 ```
 
-```
-## Error in eval(expr, envir, enclos): could not find function "corrplot"
-```
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
   
 The most significant correlation now look empty. This is visually misleading.  
   
@@ -108,10 +104,6 @@ corrplot2(temp[[1]],
          title="Correlation CI using corrplot2")
 ```
 
-```
-## Error in corrplot2(temp[[1]], cl.pos = "r", cl.align = "l", cl.ratio = 0.2, : could not find function "colorlegend"
-```
-
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
   
 This is a lot mrore informative, and we also know where does the correlation value stand, the black border in each cell.  
@@ -126,10 +118,6 @@ corrplot2(temp[[1]],
          method = "square", outline=1, diag=1,
          mar = c(0, 0, 1, 0),        
          title="Correlation CI using corrplot2")
-```
-
-```
-## Error in corrplot2(temp[[1]], cl.pos = "r", cl.align = "l", cl.ratio = 0.2, : could not find function "colorlegend"
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
