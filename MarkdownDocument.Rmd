@@ -59,6 +59,7 @@ close(con)
 
 Plot correlation matrix using `corrplot`:   
 ```{r}
+# if function "corrplot" is not recognized, you have not installed the corrplot package. Try corrplot2, the output will be the same
 corrplot(temp[[1]], 
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,         
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",

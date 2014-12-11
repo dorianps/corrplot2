@@ -62,6 +62,7 @@ close(con)
 Plot correlation matrix using `corrplot`:   
 
 ```r
+# if function "corrplot" is not recognized, you have not installed the corrplot package. Try corrplot2, the output will be the same
 corrplot(temp[[1]], 
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,         
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",
@@ -71,7 +72,9 @@ corrplot(temp[[1]],
          title="Correlation matrix using corrplot")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+```
+## Error in eval(expr, envir, enclos): could not find function "corrplot"
+```
 
 The plot shows clearly which cells contain the highest correlations. But there is no information on confidence intervals.  
   
@@ -87,7 +90,9 @@ corrplot(temp[[1]],
          title="Correlation CI using corrplot")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+```
+## Error in eval(expr, envir, enclos): could not find function "corrplot"
+```
   
 The most significant correlation now look empty. This is visually misleading.  
   
