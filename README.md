@@ -1,33 +1,21 @@
 corrplot2
 =========
 
-Extended functionality to the original "corrplot" function from the corrplot package in R.
-
-Installation:
-Open an R window and paste this line:
-source("")
+Extended functionality to the original "corrplot" function from the corrplot package in R. Check out the documentation and examples here:  
+http://htmlpreview.github.io/?https://github.com/dorianps/corrplot2/blob/master/MarkdownDocument.html
 
 
-DESCRIPTION
-1.
-The original function allows to show coefficients, but has no way of setting up font size and font color.
-Only two parameters are available: addCoef.col="black" and addCoefasPercent=T
-The following parameters are added (with respective defaults):
-addCoef.cex = 0.8 # font size of coeffficients
-addCoef.font = 2 # font type 1=plain, 2=bold, 3=italic, 4=bold italic, 5=symbol
-addCoef.labels = "all" # which cell to add coefficients, "all", "significant", "insignificant"
-addCoef.outline = NULL # outline color of the text, i.e. "white", "red"; helps distinguish text from background of different colors
+1. INSTALLATION:  
+corrplot2 is a single file located online.  
+  
+You can source it directly from R (if this works it's the easiest)  
+source("https://raw.githubusercontent.com/dorianps/corrplot2/master/corrplot2.R")  
+  
+You can open the raw version here:  
+https://raw.githubusercontent.com/dorianps/corrplot2/master/corrplot2.R  
+and copy-paste it R  
+  
+Or you can download the file and write either copy paste it (or source it) in R.  
 
-2.
-The original function allows to plot confidence intervals as "circle" or "square". However the plot shows no indication
-of the correlation value, only the confidence interval. Ironically, cells with high correlation and narrow confidence
-intervals (eg. the best correlations) appeared as empty cells, while cells with large confidence inervals (less significant) appeared fuller. The first look of the plot gave the false impression that the less significant correlations were the most
-prominent ones.
-The updated function keeps the original options but adds to variants: plotCI="fullsquare" and plotCI="fullcircle".
-These options produce three levels of squares/circles, the inner is the lower CI, the middle is the correlation value, the the upper is the highest CI. This way the most significant corre3lations do not loose their visual impact.
-
-
-
-There are unanswered questions in the web regarding this issue:
-
-The new function 
+2. DOCUMENTATION  
+see http://htmlpreview.github.io/?https://github.com/dorianps/corrplot2/blob/master/MarkdownDocument.html
