@@ -65,13 +65,15 @@ Plot correlation matrix using `corrplot`:
 corrplot(temp[[1]], 
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,         
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",
-         #low=imagingcorr[[3]], upp=temp[[4]], plotCI="square",
+         #low=temp[[3]], upp=temp[[4]], plotCI="square",
          method = "square", outline=1, diag=1,
          mar = c(0, 0, 1, 0),      
          title="Correlation matrix using corrplot")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+```
+## Error in eval(expr, envir, enclos): could not find function "corrplot"
+```
 
 The plot shows clearly which cells contain the highest correlations. But there is no information on confidence intervals.  
   
@@ -81,13 +83,15 @@ Plot correlation matrix using `corrplot` but this time with confidence intervals
 corrplot(temp[[1]], 
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,           
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",
-         low=imagingcorr[[3]], upp=temp[[4]], plotCI="square",
+         low=temp[[3]], upp=temp[[4]], plotCI="square",
          method = "square", outline=1, diag=1,
          mar = c(0, 0, 1, 0),        
          title="Correlation CI using corrplot")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+```
+## Error in eval(expr, envir, enclos): could not find function "corrplot"
+```
   
 The most significant correlation now look empty. This is visually misleading.  
   
@@ -98,10 +102,14 @@ Fix this using `corrplot2` and `plotCI="fullsquare"`:
 corrplot2(temp[[1]], 
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,           
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",
-         low=imagingcorr[[3]], upp=temp[[4]], plotCI="fullsquare",
+         low=temp[[3]], upp=temp[[4]], plotCI="fullsquare",
          method = "square", outline=1, diag=1,
          mar = c(0, 0, 1, 0),        
          title="Correlation CI using corrplot2")
+```
+
+```
+## Error in corrplot2(temp[[1]], cl.pos = "r", cl.align = "l", cl.ratio = 0.2, : could not find function "colorlegend"
 ```
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
@@ -114,10 +122,14 @@ The same can be done with circles:
 corrplot2(temp[[1]], 
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,           
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",
-         low=imagingcorr[[3]], upp=temp[[4]], plotCI="fullcircle",
+         low=temp[[3]], upp=temp[[4]], plotCI="fullcircle",
          method = "square", outline=1, diag=1,
          mar = c(0, 0, 1, 0),        
          title="Correlation CI using corrplot2")
+```
+
+```
+## Error in corrplot2(temp[[1]], cl.pos = "r", cl.align = "l", cl.ratio = 0.2, : could not find function "colorlegend"
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
@@ -140,14 +152,16 @@ corrplot2(temp[[1]],
          col=col2(100),                                                   # the colormap, inverted from original
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,                  # the settings of the legend on the side            
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",   # position and angle of variable names
-         low=imagingcorr[[3]], upp=temp[[4]], plotCI="fullsquare",             # this is to create confidence interval graph
+         low=temp[[3]], upp=temp[[4]], plotCI="fullsquare",             # this is to create confidence interval graph
          method = "square", outline=1, diag=1,      # method, outline of squares, include or not diagonal
          mar = c(0, 0, 1, 0),                        # margins of the plot         
          #type="lower",
          title="Correlation CI and coefficients using corrplot2")
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+```
+## Error in corrplot2(temp[[1]], addrect = 3, rect.col = "red", rect.lwd = 3, : could not find function "col2"
+```
   
   
   
