@@ -137,7 +137,6 @@ corrplot2(temp[[1]],
          insig="pch", pch.col="black",
          addCoef.col="black", addCoef.outline="white", addCoefasPercent=T, # add coefficients in plot
          addCoef.cex=0.9, addCoef.font=1, addCoef.labels="significant",    # other coefficient settings
-         col=col2(100),                                                   # the colormap, inverted from original
          cl.pos = "r", cl.align = "l", cl.ratio = 0.2,                  # the settings of the legend on the side            
          tl.pos = "lt", tl.srt=45, tl.cex=0.8, tl.offset=0.5, tl.col="black",   # position and angle of variable names
          low=temp[[3]], upp=temp[[4]], plotCI="fullsquare",             # this is to create confidence interval graph
@@ -147,9 +146,7 @@ corrplot2(temp[[1]],
          title="Correlation CI and coefficients using corrplot2")
 ```
 
-```
-## Error in corrplot2(temp[[1]], addrect = 3, rect.col = "red", rect.lwd = 3, : could not find function "col2"
-```
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
   
   
   
