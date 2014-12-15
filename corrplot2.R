@@ -1,17 +1,16 @@
-corrplot2 <- function (corr, method = c("circle", "square", "ellipse", "number", 
-                           "shade", "color", "pie"), type = c("full", "lower", "upper"), 
+corrplot2 <- function (corr,
+          method = c("circle", "square", "ellipse", "number", "shade", "color", "pie"), type = c("full", "lower", "upper"), 
           add = FALSE, col = NULL, bg = "white", title = "", is.corr = TRUE, 
           diag = TRUE, outline = FALSE, mar = c(0, 0, 0, 0), addgrid.col = NULL, 
-          addCoef.col = NULL, addCoef.outline = NULL, addCoefasPercent = FALSE, order = c("original", 
-                                                                  "AOE", "FPC", "hclust", "alphabet"), hclust.method = c("complete", 
-                                                                                                                         "ward", "single", "average", "mcquitty", "median", "centroid"), 
+          addCoef.col = NULL, addCoef.outline = NULL, addCoefasPercent = FALSE,
+          order = c("original", "AOE", "FPC", "hclust", "alphabet"),
+          hclust.method = c("complete", "ward", "single", "average", "mcquitty", "median", "centroid"), 
           addrect = NULL, rect.col = "black", rect.lwd = 2, tl.pos = NULL, 
           tl.cex = 1, tl.col = "red", tl.offset = 0.4, tl.srt = 90, 
           cl.pos = NULL, cl.lim = NULL, cl.length = NULL, cl.cex = 0.8, 
-          cl.ratio = 0.15, cl.align.text = "c", cl.offset = 0.5, addshade = c("negative", 
-                                                                              "positive", "all"), shade.lwd = 1, shade.col = "white", 
-          p.mat = NULL, sig.level = 0.05, insig = c("pch", "p-value", 
-                                                    "blank", "n"), pch = 4, pch.col = "black", pch.cex = 3, 
+          cl.ratio = 0.15, cl.align.text = "c", cl.offset = 0.5, 
+          addshade = c("negative", "positive", "all"), shade.lwd = 1, shade.col = "white", 
+          p.mat = NULL, sig.level = 0.05, insig = c("pch", "p-value", "blank", "n"), pch = 4, pch.col = "black", pch.cex = 3, 
           plotCI = c("n", "square", "circle", "rect", "fullcircle", "fullsquare"), lowCI.mat = NULL, 
           uppCI.mat = NULL, addCoef.cex = 0.8, addCoef.font = 2, addCoef.labels="all", ...) 
 {
@@ -54,8 +53,7 @@ corrplot2 <- function (corr, method = c("circle", "square", "ellipse", "number",
   }
   cl.lim2 <- (intercept + cl.lim) * zoom
   int <- intercept * zoom
-  if (min(corr) < -1 - .Machine$double.eps || max(corr) > 1 + 
-        .Machine$double.eps) {
+  if (min(corr) < -1 - .Machine$double.eps || max(corr) > 1 + .Machine$double.eps) {
     stop("The matrix is not in [-1, 1]!")
   }
   if (is.null(col)) {
@@ -97,8 +95,7 @@ corrplot2 <- function (corr, method = c("circle", "square", "ellipse", "number",
   n2 <- max(Pos[, 2])
   n1 <- min(Pos[, 2])
   nn <- n2 - n1
-  newrownames <- as.character(rownames(corr)[(n + 1 - n2):(n + 
-                                                             1 - n1)])
+  newrownames <- as.character(rownames(corr)[(n + 1 - n2):(n + 1 - n1)])
   m2 <- max(Pos[, 1])
   m1 <- min(Pos[, 1])
   mm <- m2 - m1
@@ -447,17 +444,14 @@ corrplot2 <- function (corr, method = c("circle", "square", "ellipse", "number",
   if (!is.null(addCoef.col) & (!method == "number")) {
     labels <- round((DAT - int) * ifelse(addCoefasPercent, 100, 1)/zoom, ifelse(addCoefasPercent, 0, 2))  # default if addCoef.labels="all"
     labels <- as.character(labels)
-    p.mat <- p.mat[ord, ord]
-    pNew <- getPos.Dat(p.mat)[[2]]
-    ind.p <- which(pNew > (sig.level))
-    
+        
     if (addCoef.labels == "significant") labels[ ind.p ] = ""
     if (addCoef.labels == "insignificant") labels[ -(ind.p)] = ""
 
     if (!is.null(addCoef.outline)) {
-      shadowtext(Pos[, 1], Pos[, 2], col = addCoef.col, bg = addCoef.outline, cex=addCoef.cex, font=addCoef.font, labels = labels)
+      shadowtext(Pos[,1], Pos[,2], col = addCoef.col, bg = addCoef.outline, cex=addCoef.cex, font=addCoef.font, labels = labels)
     } else {
-      text(Pos[, 1], Pos[, 2], col = addCoef.col, cex=addCoef.cex, font=addCoef.font, labels = labels) # original line
+      text(Pos[,1], Pos[,2], col = addCoef.col, cex=addCoef.cex, font=addCoef.font, labels = labels) # original line
     }
   }
   if (type == "full" & plotCI == "n" & !is.null(addgrid.col)) 
