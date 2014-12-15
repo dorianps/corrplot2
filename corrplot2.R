@@ -431,8 +431,8 @@ corrplot2 <- function (corr,
     }
     else {
       text(pos.xlabel[, 1], pos.xlabel[, 2], newcolnames, 
-           srt = tl.srt, adj = ifelse(tl.srt == 0, c(0.5, 
-                                                     0), c(0, 0)), col = tl.col, cex = tl.cex, offset = tl.offset, 
+           srt = tl.srt, adj = ifelse(tl.srt == 0, c(0.5, 0), c(0, 0)),
+           col = tl.col, cex = tl.cex, offset = tl.offset, 
            ...)
       text(pos.ylabel[, 1], pos.ylabel[, 2], newrownames, 
            col = tl.col, cex = tl.cex, pos = 2, offset = tl.offset, 
