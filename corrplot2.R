@@ -389,6 +389,7 @@ corrplot2 <- function (corr,
       cl.length <- ifelse(length(colbar) > 20, 11, length(colbar) + 
                             1)
     labels <- seq(cl.lim[1], cl.lim[2], length = cl.length)
+    if (addCoefasPercent) labels <- round(labels*100)
     at <- seq(0, 1, length = length(labels))
     if (cl.pos == "r") {
       vertical <- TRUE
