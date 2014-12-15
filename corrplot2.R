@@ -464,7 +464,7 @@ corrplot2 <- function (corr,
 }
 
 shadowtext <- function(x, y=NULL, labels, col='white', bg='black', 
-                       theta= seq(0, 2*pi, length.out=50), r=0.08, ... ) {
+                       theta= seq(0, 2*pi, length.out=50), r=0.06, ... ) {
   
   xy <- xy.coords(x,y)
   xo <- r*strwidth('A')
